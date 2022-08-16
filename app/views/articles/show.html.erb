@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <%= link_to "Back to menu", articles_path %>
+    </div>
+    <div class="col">
+      <%= link_to "Edit article", edit_article_path %>
+    </div>
+    <div class="col">
+      <%= link_to article_path(@article), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do%>
+        <i class="fas fa-trash"></i>
+      <% end %>
+    </div>
+  </div>
+</div>
+<h2><%= @article.title %></h2>
+<p><%= @article.content %></p>
